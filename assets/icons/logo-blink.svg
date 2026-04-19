@@ -1,0 +1,71 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 100 100">
+  <defs>
+    <symbol id="eye" viewBox="0 0 100 100">
+      <rect x="15" y="7.5" width="20" height="20" rx="10" ry="10" mask="url(#eyes-mask)" fill="#333333">
+        <animate attributeName="width" dur="5s" repeatCount="indefinite" fill="freeze"
+          values="30; 30; 20; 20; 30; 30; 20; 20; 30; 30"
+          keyTimes="0; 0.16; 0.17; 0.375; 0.38; 0.39; 0.40; 0.65; 0.81; 1" />
+        <animate attributeName="height" dur="5s" repeatCount="indefinite" fill="freeze"
+          values="10;10;20;20;10;10;20;20;10;10;"
+          keyTimes="0; 0.16; 0.17; 0.375; 0.38; 0.39; 0.40; 0.65; 0.81; 1" />
+        <animate attributeName="rx" dur="5s" repeatCount="indefinite" fill="freeze"
+          values="5;5;10;10;5;5;10;10;5;5"
+          keyTimes="0; 0.16; 0.17; 0.375; 0.38; 0.39; 0.40; 0.65; 0.81; 1" />
+        <animate attributeName="ry" dur="5s" repeatCount="indefinite" fill="freeze"
+          values="5;5;10;10;5;5;10;10;5;5"
+          keyTimes="0; 0.16; 0.17; 0.375; 0.38; 0.39; 0.40; 0.65; 0.81; 1" />
+        <animate attributeName="x" dur="5s" repeatCount="indefinite" fill="freeze"
+          values="10;10;15;15;10;10;15;15;10;10;"
+          keyTimes="0; 0.16; 0.17; 0.375; 0.38; 0.39; 0.40; 0.65; 0.81; 1" />
+        <animate attributeName="y" dur="5s" repeatCount="indefinite" fill="freeze"
+          values="15;15;7.5;7.5;15;15;7.5;7.5;15;15;"
+          keyTimes="0; 0.16; 0.17; 0.375; 0.38; 0.39; 0.40; 0.65; 0.81; 1" />
+      </rect>
+
+      <mask id="eyes-mask">
+        <rect x="10" y="5" width="30" height="30" rx="10" ry="10" fill="white" />
+        <g>
+          <circle cx="20" cy="15" r="4" fill="black" />
+          <circle cx="31" cy="22" r="2" fill="black" />
+          <animate attributeName="opacity" dur="5s" repeatCount="indefinite" fill="freeze"
+            values="0; 0; 1; 1; 0; 0"
+            keyTimes="0; 0.15; 0.17; 0.64; 0.7; 1" />
+        </g>
+      </mask>
+    </symbol>
+
+    <symbol id="cheek" viewBox="0 0 100 100">
+      <rect x="10" y="30" width="30" height="25" rx="5" ry="5" mask="url(#rect-mask)" fill="#333333" />
+      <mask id="rect-mask">
+        <rect x="10" y="30" width="30" height="25" rx="5" ry="5" fill="white" />
+        <g>
+          <rect x="16" y="36" width="1.5" height="8" rx="1" ry="1" fill="black" />
+          <rect x="20" y="36" width="1.5" height="8" rx="1" ry="1" fill="black" />
+          <rect x="24" y="36" width="1.5" height="8" rx="1" ry="1" fill="black" />
+          <rect x="28" y="36" width="1.5" height="8" rx="1" ry="1" fill="black" />
+          <rect x="32" y="36" width="1.5" height="8" rx="1" ry="1" fill="black" />
+          <animate attributeName="opacity" dur="5s" repeatCount="indefinite" fill="freeze"
+            values="0; 0; 1; 1; 0"
+            keyTimes="0; 0.17; 0.55; 0.65; 1" />
+        </g>
+      </mask>
+    </symbol>
+
+    <mask id="face-mask">
+      <circle cx="50" cy="50" r="40" fill="white" />
+      <rect x="0" y="0" width="100" height="45" fill="black" />
+      <rect x="40" y="40" width="20" height="10" fill="black" />
+      <circle cx="50" cy="50" r="10" fill="black" />
+    </mask>
+  </defs>
+
+  <circle cx="50" cy="50" r="40" mask="url(#face-mask)" fill="#333333" />
+  <use xlink:href="#eye" x="0" />
+  <use xlink:href="#eye" x="50" />
+  <use xlink:href="#cheek" x="0" />
+  <use xlink:href="#cheek" x="50" />
+
+</svg>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UlarBox | Organize Your Digital Life</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Inter:wght@400;500;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Vuetify CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@3.11.8/dist/vuetify.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --v-theme-primary: #1976D2;
+      --text-brand: #333333;
+      --text-main: #4A4A4A;
+      --card-bg: #ffffff;
+    }
+    body {
+      font-family: 'Inter', 'Roboto', sans-serif !important;
+      background-color: #fcfcfc;
+      color: var(--text-main);
+    }
+    .v-application {
+      font-family: 'Inter', 'Roboto', sans-serif !important;
+      color: var(--text-main);
+      background: transparent !important;
+    }
+    /* Brand Font: Fredoka 600 - Only for App Name */
+    .brand-title-text {
+      font-family: 'Fredoka', sans-serif !important;
+      font-weight: 600 !important;
+      color: var(--text-brand) !important;
+      letter-spacing: -0.2px;
+    }
+    .v-btn, .app-store-badge, a {
+      cursor: pointer !important;
+    }
+    .hero-section {
+      padding: 100px 0 60px 0;
+      text-align: center;
+    }
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+      color: var(--text-brand);
+    }
+    .hero-subtitle {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      color: var(--text-main);
+      margin-bottom: 32px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-image-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+      border: 1px solid #eee;
+    }
+    .privacy-badge-hero {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      background: #f0f7ff;
+      border-radius: 50px;
+      color: var(--v-theme-primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 48px;
+    }
+    .feature-card {
+      background-color: var(--card-bg) !important;
+      border: none !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+      height: 100%;
+      border-radius: 24px !important;
+    }
+    .feature-title {
+      font-size: 1.25rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 8px;
+      color: var(--text-brand);
+    }
+    .screenshot-container {
+      background: #f8f9fa;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #f0f0f0;
+      aspect-ratio: 16/10;
+    }
+    .v-container {
+      max-width: 1100px !important;
+    }
+    .footer {
+      background: #fdfdfd;
+      border-top: 1px solid #eee;
+      padding: 60px 0 40px 0;
+    }
+    .app-store-badge-nav {
+      height: 36px;
+      transition: opacity 0.2s;
+    }
+    .faq-section {
+      background: #fafafa;
+      padding: 80px 0;
+    }
+    [v-cloak] { display: none; }
+  </style>
+</head>
+<body>
+  <div id="app" v-cloak>
+    <v-app theme="light">
+      <!-- Navigation -->
+      <v-app-bar flat border="bottom" color="white" density="comfortable">
+        <v-container class="d-flex align-center pa-0">
+          <v-img src="assets/icons/logo-blink.svg" width="36" height="36" class="flex-grow-0 mr-2"></v-img>
+          <v-toolbar-title class="brand-title-text text-h5">UlarBox</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <a href="https://apps.apple.com/app/id-placeholder">
+            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/black/en-us?size=250x83&amp;releaseDate=1310688000&h=0be7a27b876d7240c5780d6f3b063857" alt="Download on the Mac App Store" class="app-store-badge-nav mt-1">
+          </a>
+        </v-container>
+      </v-app-bar>
+
+      <v-main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <v-container>
+            <h1 class="hero-title">Organize Your Digital Life</h1>
+            <p class="hero-subtitle">
+              Stop digging through messy folders. Transform your documents, images, and media into structured, searchable data with instant preview.
+            </p>
+            
+            <div class="privacy-badge-hero">
+              <v-icon icon="mdi-shield-check" class="mr-2" size="small"></v-icon>
+              Local-First Privacy: Your data never leaves your device.
+            </div>
+            
+            <div class="hero-image-container mb-16">
+              <v-img src="assets/screenshots/hero.png" cover class="bg-grey-lighten-4">
+                <template v-slot:placeholder>
+                  <div class="d-flex align-center justify-center fill-height">
+                    <v-progress-circular indeterminate color="primary"></v-progress-circular>
+                  </div>
+                </template>
+              </v-img>
+            </div>
+          </v-container>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="py-16">
+          <v-container>
+            <div class="text-center mb-16">
+              <h2 class="text-h4 font-weight-bold mb-4" style="color: var(--text-brand)">Powerful Features for Your Workflow</h2>
+              <p style="color: var(--text-main)">Everything you need to manage your personal archive effectively.</p>
+            </div>
+            
+            <v-row>
+              <v-col cols="12" md="6">
+                <v-card class="feature-card pa-8" flat>
+                  <div class="screenshot-container mb-6">
+                    <v-img src="assets/screenshots/feature1.png" cover class="bg-white"></v-img>
+                  </div>
+                  <h3 class="feature-title">Structured Table Layout</h3>
+                  <p class="text-body-2" style="color: var(--text-main)">Manage your documents in a clean, organized table. Customize columns to fit your specific needs with a familiar grid interface.</p>
+                </v-card>
+              </v-col>
+              <v-col cols="12" md="6">
+                <v-card class="feature-card pa-8" flat>
+                  <div class="screenshot-container mb-6">
+                    <v-img src="assets/screenshots/feature2.png" cover class="bg-white"></v-img>
+                  </div>
+                  <h3 class="feature-title">Instant Content Preview</h3>
+                  <p class="text-body-2" style="color: var(--text-main)">Seamlessly view images, videos, PDF, and Markdown files. High-performance rendering for your essential media and documents without delays.</p>
+                </v-card>
+              </v-col>
+              <v-col cols="12" md="6">
+                <v-card class="feature-card pa-8" flat>
+                  <div class="screenshot-container mb-6">
+                    <v-img src="assets/screenshots/feature3.png" cover class="bg-white"></v-img>
+                  </div>
+                  <h3 class="feature-title">Flexible Metadata Control</h3>
+                  <p class="text-body-2" style="color: var(--text-main)">Add custom properties to any file—dates, statuses, amounts, or tags. Your files become structured knowledge, not just random items.</p>
+                </v-card>
+              </v-col>
+              <v-col cols="12" md="6">
+                <v-card class="feature-card pa-8" flat>
+                  <div class="screenshot-container mb-6">
+                    <v-img src="assets/screenshots/feature4.png" cover class="bg-white"></v-img>
+                  </div>
+                  <h3 class="feature-title">Powerful Discovery</h3>
+                  <p class="text-body-2" style="color: var(--text-main)">Find anything instantly with complex operators and multi-column sorting. Search across your entire archive at the speed of thought.</p>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+          <v-container>
+            <div class="text-center mb-12">
+              <h2 class="text-h4 font-weight-bold" style="color: var(--text-brand)">Common Questions</h2>
+            </div>
+            <v-row justify="center">
+              <v-col cols="12" md="8">
+                <v-expansion-panels variant="accordion" class="elevation-0">
+                  <v-expansion-panel elevation="0" rounded="lg" class="mb-2">
+                    <v-expansion-panel-title class="font-weight-bold" style="color: var(--text-brand)">Where is my data stored?</v-expansion-panel-title>
+                    <v-expansion-panel-text class="text-body-2" style="color: var(--text-main)">
+                      Your data is stored exclusively on your local device in a secure SQLite database. We never upload your files or metadata to any external servers.
+                    </v-expansion-panel-text>
+                  </v-expansion-panel>
+                  <v-expansion-panel elevation="0" rounded="lg" class="mb-2">
+                    <v-expansion-panel-title class="font-weight-bold" style="color: var(--text-brand)">Does UlarBox support cloud sync?</v-expansion-panel-title>
+                    <v-expansion-panel-text class="text-body-2" style="color: var(--text-main)">
+                      No. UlarBox is built on a "local-first" principle to ensure maximum privacy, speed, and offline availability. You have full control over your own data.
+                    </v-expansion-panel-text>
+                  </v-expansion-panel>
+                  <v-expansion-panel elevation="0" rounded="lg" class="mb-2">
+                    <v-expansion-panel-title class="font-weight-bold" style="color: var(--text-brand)">What file types can I manage?</v-expansion-panel-title>
+                    <v-expansion-panel-text class="text-body-2" style="color: var(--text-main)">
+                      UlarBox supports a wide range of formats including Images, Videos, Audio, PDF, Markdown, and plain text. If it's a file on your disk, UlarBox can help you organize it.
+                    </v-expansion-panel-text>
+                  </v-expansion-panel>
+                  <v-expansion-panel elevation="0" rounded="lg" class="mb-2">
+                    <v-expansion-panel-title class="font-weight-bold" style="color: var(--text-brand)">How do I backup my database?</v-expansion-panel-title>
+                    <v-expansion-panel-text class="text-body-2" style="color: var(--text-main)">
+                      You can easily export your entire box configuration and metadata using the built-in Export feature for safe backup and manual migration.
+                    </v-expansion-panel-text>
+                  </v-expansion-panel>
+                </v-expansion-panels>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+      </v-main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <v-container>
+          <v-row>
+            <v-col cols="12" md="4">
+              <div class="d-flex align-center mb-4">
+                <v-img src="assets/icons/logo-blink.svg" width="24" height="24" class="flex-grow-0 mr-2"></v-img>
+                <span class="brand-title-text text-h6">UlarBox</span>
+              </div>
+              <p class="text-body-2 mb-6" style="color: var(--text-main)">
+                Organize your life's essentials. A personal database for documents, images, and media.
+              </p>
+            </v-col>
+            <v-col cols="12" md="4">
+              <h4 class="font-weight-bold mb-4" style="color: var(--text-brand)">Support & Privacy</h4>
+              <v-list density="compact" class="bg-transparent pa-0">
+                <v-list-item class="pa-0" href="mailto:hello@ular.io">
+                  <v-list-item-title class="text-body-2" style="color: var(--text-main)">Technical Support</v-list-item-title>
+                </v-list-item>
+                <v-list-item class="pa-0" href="privacy.html">
+                  <v-list-item-title class="text-body-2" style="color: var(--text-main)">Privacy Policy</v-list-item-title>
+                </v-list-item>
+                <v-list-item class="pa-0" href="terms.html">
+                  <v-list-item-title class="text-body-2" style="color: var(--text-main)">Terms of Service</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-col>
+            <v-col cols="12" md="4" class="text-md-right">
+              <h4 class="font-weight-bold mb-4" style="color: var(--text-brand)">Available on</h4>
+              <a href="https://apps.apple.com/app/id-placeholder">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/black/en-us?size=250x83&amp;releaseDate=1310688000&h=0be7a27b876d7240c5780d6f3b063857" alt="Download on the Mac App Store" class="app-store-badge-nav">
+              </a>
+            </v-col>
+          </v-row>
+          <v-divider class="my-8"></v-divider>
+          <div class="d-flex flex-column flex-md-row justify-space-between text-caption ga-4" style="color: var(--text-main)">
+            <div>© 2026 UlartioSoft. All rights reserved.</div>
+            <div class="d-flex ga-4">
+              <span>Personalized archive system for everyone</span>
+            </div>
+          </div>
+        </v-container>
+      </footer>
+    </v-app>
+  </div>
+
+  <!-- Vue & Vuetify Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.5.28/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@3.11.8/dist/vuetify.min.js"></script>
+
+  <script>
+    const { createApp } = Vue;
+    const { createVuetify } = Vuetify;
+
+    const vuetify = createVuetify();
+
+    createApp({
+      setup() {
+        return {};
+      }
+    }).use(vuetify).mount('#app');
+  </script>
+</body>
+</html>
